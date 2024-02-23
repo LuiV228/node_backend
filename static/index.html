@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>node_poject</title>
+  </head>
+  <body>
+    <h1>Routing tables</h1>
+    <caption>
+      <h3>General Routing</h3>
+    </caption>
+    <table class="table table-bordered border-primary">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Path</th>
+          <th scope="col">HTTP Methods</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">/</th>
+          <td>GET</td>
+          <td>Display the home page</td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br />
+    <caption>
+      <h3>User Routing</h3>
+    </caption>
+    <table class="table table-bordered border-primary">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Path</th>
+          <th scope="col">HTTP Methods</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">/Users/</th>
+          <td>GET</td>
+          <td>Get all the users</td>
+        </tr>
+        <tr>
+          <th scope="row">/User/:id</th>
+          <td>Get</td>
+          <td>Fetch a specific user</td>
+        </tr>
+        <tr>
+          <th scope="row">/User/register</th>
+          <td>POST</td>
+          <td>Register a new user</td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br />
+    <caption>
+      <h3>Jewellery Routing</h3>
+    </caption>
+    <table class="table table-bordered border-primary">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Path</th>
+          <th scope="col">HTTP Methods</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">/Jewellery/</th>
+          <td>GET</td>
+          <td>To display all jewellery items</td>
+        </tr>
+        <tr>
+          <th scope="row">/Jewellery/:id</th>
+          <td>GET</td>
+          <td>Fetch a specific jewellery item</td>
+        </tr>
+        <tr>
+          <th scope="row">/Jewellery/addJewel</th>
+          <td>GET</td>
+          <td>Add a new jewellery item</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
