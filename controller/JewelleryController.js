@@ -2,9 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { jewellery } from '../model/index.js';
 
-const productRouter = express.Router();
+const jewelleryRouter = express.Router();
 
-// Fetch all products
 jewelleryRouter.get('/', (req, res)=>{
     try {
         jewellery.fetchJewellery(req, res);
