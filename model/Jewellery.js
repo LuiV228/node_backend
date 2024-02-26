@@ -16,7 +16,7 @@ class Jewellery {
   }
   fetchJewel(req, res) {
     const qry = `
-        SELECT jewelID, jewelName, jewelQuantity,
+        SELECT jewelID, jewelleryCategory, jewelName, jewelQuantity,
         jewelAmount, userID
         FROM Jewellery
         WHERE jewelID = ${req.params.id};
