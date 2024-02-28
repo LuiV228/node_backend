@@ -2,7 +2,7 @@ import { connection as db } from "../config/index.js";
 class Jewellery {
   fetchJewellery(req, res) {
     const qry = `
-        SELECT jewelID, jewelleryCategory, jewelDescription, jewelImage, jewelName, jewelQuantity,
+        SELECT jewelID, jewelCategory, jewelDescription, jewelImage, jewelName, jewelQuantity,
         jewelAmount, userID
         FROM Jewellery;
         `;
@@ -16,7 +16,7 @@ class Jewellery {
   }
   fetchJewel(req, res) {
     const qry = `
-        SELECT jewelID, jewelleryCategory, jewelDescription, jewelImage, jewelName, jewelQuantity,
+        SELECT jewelID, jewelCategory, jewelDescription, jewelImage, jewelName, jewelQuantity,
         jewelAmount, userID
         FROM Jewellery
         WHERE jewelID = ${req.params.id};
