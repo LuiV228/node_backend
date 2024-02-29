@@ -16,7 +16,7 @@ class Jewellery {
   }
   fetchJewel(req, res) {
     const qry = `
-        SELECT jewelID, jewelCategory, jewelDescription, jewelImage, jewelName, jewelQuantity,
+        select jewelID, jewelCategory, jewelDescription, jewelImage, jewelName, jewelQuantity,
         jewelAmount, userID
         FROM Jewellery
         WHERE jewelID = ${req.params.id};
@@ -31,8 +31,8 @@ class Jewellery {
   }
   addJewel(req, res) {
     const qry = `
-        INSERT INTO Jewellery
-        SET ?;
+        insert into Jewellery
+        set ?;
         `;
     db.query(qry, [req.body], (err) => {
       if (err) throw err;
@@ -44,8 +44,8 @@ class Jewellery {
   }
   deleteJewel(req, res) {
     const qry = `
-        DELETE Jewellery
-        SET ?;
+        delete from Jewellery
+        where jewelID = ${req.params.id}
         `;
     db.query(qry, [req.body], (err) => {
       if (err) throw err;
@@ -57,9 +57,9 @@ class Jewellery {
   }
   updateJewel(req, res) {
     const qry = `
-        UPDATE Jewellery,
-        WHERE 
-        SET ?;
+        update Jewellery
+        SET ?
+        WHERE jewelID = ${req.params.id}
         `;
     db.query(qry, [req.body], (err) => {
       if (err) throw err;

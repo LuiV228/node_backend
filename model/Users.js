@@ -5,10 +5,10 @@ import { createToken } from "../middleware/AuthenticationUser.js";
 class Users {
   fetchUsers(req, res) {
     const qry = `
-            SELECT userID, firstName, lastName,
+            select userID, firstName, lastName,
             userAge, gender, emailAdd, userPwd,
             userRole
-            FROM Users;
+            from Users;
             `;
     db.query(qry, (err, results) => {
       if (err) console.log(err);
@@ -20,16 +20,16 @@ class Users {
   }
   fetchUser(req, res) {
     const qry = `
-            SELECT userID, firstName, lastName,
+            select userID, firstName, lastName,
             userAge, gender, emailAdd, userPwd, userRole
-            FROM Users
-            WHERE userID = ${req.params.id};
+            from Users
+            where userID = ${req.params.id};
             `;
     db.query(qry, (err, result) => {
       if (err) throw err;
       res.json({
         status: res.statusCode,
-        result
+        result,
       });
     });
   }
@@ -41,8 +41,8 @@ class Users {
       userPwd: data.userPwd,
     };
     const qry = `
-        INSERT INTO Users
-        SET ?;
+        insert into Users
+        set ?;
         `;
     db.query(qry, [data], (err) => {
       if (err) {
@@ -62,10 +62,10 @@ class Users {
   }
   async deleteUser(req, res) {
     const qry = `
-    Delete FROM Users
-    WHERE userID = ${req.params.id};
+    delete from Users
+    where userID = ${req.params.id};
     `;
-    db.query(qry, (err) => {
+    db.query(qry, [req.body], (err) => {
       if (err) throw err;
       res.json({
         status: res.statusCode,
@@ -79,9 +79,9 @@ class Users {
       data.userPwd = await hash(data?.userPwd, 8);
     }
     const qry = `
-    UPDATE Users
-    SET ?
-    WHERE userID = ${req.params.id}
+    update Users
+    set ?
+    where userID = ${req.params.id}
     `;
     db.query(qry, [data], (err) => {
       if (err) throw err;
@@ -95,10 +95,10 @@ class Users {
   login(req, res) {
     const { emailAdd, userPwd } = req.body;
     const qry = `
-    SELECT userID, firstName, lastName,
+    select userID, firstName, lastName,
     userAge, gender, emailAdd, userPwd, userRole
-    FROM Users
-    WHERE emailAdd = '${emailAdd}';
+    from Users
+    where emailAdd = '${emailAdd}';
     `;
     db.query(qry, async (err, result) => {
       if (err) throw err;
