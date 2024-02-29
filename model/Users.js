@@ -105,7 +105,7 @@ class Users {
       if (!result?.length) {
         res.json({
           status: statusCode,
-          msg: "Wrong email address provided",
+          msg: "Wrong email address or password provided",
         });
       } else {
         const validPass = await compare(userPwd, result[0].userPwd);
