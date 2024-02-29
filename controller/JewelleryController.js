@@ -32,12 +32,23 @@ jewelleryRouter.post('/addJewel', bodyParser.json(), (req, res)=>{
     } catch(e) {
         res.json({
             status: res.statusCode,
-            msg: "Failed to add jewellery items."
+            msg: "Failed to add jewellery item."
         })
     }
 })
 
-jewelleryRouter.patch('/update/:id', bodyParser.json(), (req, res)=>{
+jewelleryRouter.delete('/deleteJewel', bodyParser.json(), (req, res)=>{
+    try {
+        jewellery.deleteJewel(req, res);
+    } catch(e) {
+        res.json({
+            status: res.statusCode,
+            msg: "Failed to delete jewellery item."
+        })
+    }
+})
+
+jewelleryRouter.patch('/updateJewel/:id', bodyParser.json(), (req, res)=>{
     try {
         jewellery.updateJewel(req, res);
     } catch(e) {
