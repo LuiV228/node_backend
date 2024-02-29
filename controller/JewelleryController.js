@@ -17,7 +17,7 @@ jewelleryRouter.get('/', (req, res)=>{
 
 jewelleryRouter.get('/:id', (req, res)=>{
     try {
-        jewellery.fetchJewellery(req, res);
+        jewellery.fetchJewel(req, res);
     } catch(e){
         res.json({
             status: res.statusCode,

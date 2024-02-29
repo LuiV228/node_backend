@@ -18,7 +18,7 @@ userRouter.get("/", (req, res) => {
 
 userRouter.get("/:id", (req, res) => {
   try {
-    users.fetchUsers(req, res);
+    users.fetchUser(req, res);
   } catch (e) {
     res.json({
       status: res.statusCode,
