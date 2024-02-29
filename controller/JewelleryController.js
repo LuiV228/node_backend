@@ -37,7 +37,7 @@ jewelleryRouter.post('/addJewel', bodyParser.json(), (req, res)=>{
     }
 })
 
-jewelleryRouter.delete('/deleteJewel', bodyParser.json(), (req, res)=>{
+jewelleryRouter.delete('/deleteJewel/:id', bodyParser.json(), (req, res)=>{
     try {
         jewellery.deleteJewel(req, res);
     } catch(e) {
