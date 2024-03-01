@@ -47,19 +47,34 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">/Users/</th>
+          <th scope="row">/users/</th>
           <td>GET</td>
           <td>Get all the users</td>
         </tr>
         <tr>
-          <th scope="row">/User/:id</th>
+          <th scope="row">/users/:id</th>
           <td>Get</td>
           <td>Fetch a specific user</td>
         </tr>
         <tr>
-          <th scope="row">/User/register</th>
+          <th scope="row">/users/addUser</th>
           <td>POST</td>
-          <td>Register a new user</td>
+          <td>Add a new user</td>
+        </tr>
+        <tr>
+          <th scope="row">/users/deleteUser/:id</th>
+          <td>DELETE</td>
+          <td>Delete a user</td>
+        </tr>
+        <tr>
+          <th scope="row">/jewellery/updateUser/:id</th>
+          <td>PATCH</td>
+          <td>Update an existing user</td>
+        </tr>
+        <tr>
+          <th scope="row">/users/login</th>
+          <td>POST</td>
+          <td>Login to an existing user</td>
         </tr>
       </tbody>
     </table>
@@ -77,19 +92,29 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">/Jewellery/</th>
+          <th scope="row">/jewellery/</th>
           <td>GET</td>
           <td>To display all jewellery items</td>
         </tr>
         <tr>
-          <th scope="row">/Jewellery/:id</th>
+          <th scope="row">/jewellery/:id</th>
           <td>GET</td>
           <td>Fetch a specific jewellery item</td>
         </tr>
         <tr>
-          <th scope="row">/Jewellery/addJewel</th>
-          <td>GET</td>
+          <th scope="row">/jewellery/addJewel</th>
+          <td>POST</td>
           <td>Add a new jewellery item</td>
+        </tr>
+        <tr>
+          <th scope="row">/jewellery/deleteJewel</th>
+          <td>DELETE</td>
+          <td>Delete a jewellery item</td>
+        </tr>
+        <tr>
+          <th scope="row">/jewellery/updateJewel/:id</th>
+          <td>PATCH</td>
+          <td>Update an existing jewellery item</td>
         </tr>
       </tbody>
     </table>
